@@ -1,0 +1,636 @@
+Program.Sub.ScreenSU.Start
+gui.F_CUMs..create
+gui.F_CUMs..caption("Customer Parts CUMs")
+gui.F_CUMs..size(13290,7170)
+gui.F_CUMs..position(0,0)
+gui.F_CUMs..event(unload,f_cums_unload)
+gui.F_CUMs..alwaysontop(False)
+gui.F_CUMs..fontname("Arial")
+gui.F_CUMs..fontsize(8)
+gui.F_CUMs..forecolor(0)
+gui.F_CUMs..fontstyle(,,,,)
+gui.F_CUMs..BackColor(-2147483633)
+gui.F_CUMs..controlbox(True)
+gui.F_CUMs..maxbutton(True)
+gui.F_CUMs..minbutton(True)
+gui.F_CUMs..mousepointer(0)
+gui.F_CUMs..moveable(True)
+gui.F_CUMs..sizeable(True)
+gui.F_CUMs..ShowInTaskBar(True)
+gui.F_CUMs..titlebar(True)
+gui.F_CUMs.gsflexgrid1.create(gsflexgrid)
+gui.F_CUMs.gsflexgrid1.FixedRows(0)
+gui.F_CUMs.gsflexgrid1.FixedCols(0)
+gui.F_CUMs.gsflexgrid1.visible(True)
+gui.F_CUMs.gsflexgrid1.size(12630,5325)
+gui.F_CUMs.gsflexgrid1.zorder(0)
+gui.F_CUMs.gsflexgrid1.position(200,975)
+gui.F_CUMs.gsflexgrid1.enabled(True)
+gui.F_CUMs.gsflexgrid1.event(commandclick,gsflexgrid1_commandclick)
+gui.F_CUMs.cmdAdd.create(button)
+gui.F_CUMs.cmdAdd.caption("Add New Customer/Part")
+gui.F_CUMs.cmdAdd.visible(True)
+gui.F_CUMs.cmdAdd.size(1950,375)
+gui.F_CUMs.cmdAdd.zorder(0)
+gui.F_CUMs.cmdAdd.position(2910,375)
+gui.F_CUMs.cmdAdd.enabled(True)
+gui.F_CUMs.cmdAdd.fontname("Arial")
+gui.F_CUMs.cmdAdd.fontsize(8)
+gui.F_CUMs.cmdAdd.event(click,cmdadd_click)
+gui.F_CUMs.cmdAdd.disableonclick(10)
+gui.F_CUMs.cmdCalc.create(button)
+gui.F_CUMs.cmdCalc.caption("Calculate CUMs")
+gui.F_CUMs.cmdCalc.visible(True)
+gui.F_CUMs.cmdCalc.size(1320,375)
+gui.F_CUMs.cmdCalc.zorder(0)
+gui.F_CUMs.cmdCalc.position(4955,375)
+gui.F_CUMs.cmdCalc.enabled(True)
+gui.F_CUMs.cmdCalc.fontname("Arial")
+gui.F_CUMs.cmdCalc.fontsize(8)
+gui.F_CUMs.cmdCalc.event(click,cmdcalc_click)
+gui.F_CUMs.cmdCalc.disableonclick(10)
+gui.F_CUMs.txtCust.create(textbox,"",True,2000,300,0,200,425,False,0,Arial,8,-2147483643,1)
+gui.F_CUMs.lbl1.create(label,"Customer",True,840,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.F_CUMs.cmdCustBrowser.create(button)
+gui.F_CUMs.cmdCustBrowser.caption("^")
+gui.F_CUMs.cmdCustBrowser.visible(True)
+gui.F_CUMs.cmdCustBrowser.size(375,375)
+gui.F_CUMs.cmdCustBrowser.zorder(0)
+gui.F_CUMs.cmdCustBrowser.position(2255,375)
+gui.F_CUMs.cmdCustBrowser.enabled(True)
+gui.F_CUMs.cmdCustBrowser.fontname("Arial")
+gui.F_CUMs.cmdCustBrowser.fontsize(8)
+gui.F_CUMs.cmdCustBrowser.event(click,cmdcustbrowser_click)
+gui.F_CUMs.cmdCustBrowser.disableonclick(10)
+gui.F_CUMs.cmdDisplay.create(button)
+gui.F_CUMs.cmdDisplay.caption("Display All")
+gui.F_CUMs.cmdDisplay.visible(True)
+gui.F_CUMs.cmdDisplay.size(930,375)
+gui.F_CUMs.cmdDisplay.zorder(0)
+gui.F_CUMs.cmdDisplay.position(6375,375)
+gui.F_CUMs.cmdDisplay.enabled(True)
+gui.F_CUMs.cmdDisplay.fontname("Arial")
+gui.F_CUMs.cmdDisplay.fontsize(8)
+gui.F_CUMs.cmdDisplay.event(click,cmddisplay_click)
+gui.F_CUMs.cmdDisplay.disableonclick(10)
+
+
+gui.F_Add..create
+gui.F_Add..caption("Add New Customer/Part")
+gui.F_Add..size(12810,1665)
+gui.F_Add..position(0,0)
+gui.F_Add..event(unload,f_add_unload)
+gui.F_Add..alwaysontop(False)
+gui.F_Add..fontname("Arial")
+gui.F_Add..fontsize(8)
+gui.F_Add..forecolor(0)
+gui.F_Add..fontstyle(,,,,)
+gui.F_Add..BackColor(-2147483633)
+gui.F_Add..controlbox(True)
+gui.F_Add..maxbutton(True)
+gui.F_Add..minbutton(True)
+gui.F_Add..mousepointer(0)
+gui.F_Add..moveable(True)
+gui.F_Add..sizeable(True)
+gui.F_Add..ShowInTaskBar(True)
+gui.F_Add..titlebar(True)
+gui.F_Add.txtPart.create(textbox,"",True,2000,300,0,200,415,False,0,Arial,8,-2147483643,1)
+gui.F_Add.cmdPart.create(button)
+gui.F_Add.cmdPart.caption("^")
+gui.F_Add.cmdPart.visible(True)
+gui.F_Add.cmdPart.size(375,375)
+gui.F_Add.cmdPart.zorder(0)
+gui.F_Add.cmdPart.position(2200,385)
+gui.F_Add.cmdPart.enabled(True)
+gui.F_Add.cmdPart.fontname("Arial")
+gui.F_Add.cmdPart.fontsize(8)
+gui.F_Add.cmdPart.event(click,cmdpart_click)
+gui.F_Add.txtCustPart.create(textbox,"",True,2000,300,0,2700,415,False,0,Arial,8,-2147483643,1)
+gui.F_Add.lbl2.create(label,"CustomerPart",True,1575,255,1,2700,200,True,0,Arial,8,-2147483633,0)
+gui.F_Add.dtpPeriod.create(datepicker)
+gui.F_Add.dtpPeriod.visible(True)
+gui.F_Add.dtpPeriod.size(1935,285)
+gui.F_Add.dtpPeriod.zorder(0)
+gui.F_Add.dtpPeriod.position(4850,415)
+gui.F_Add.dtpPeriod.enabled(True)
+gui.F_Add.dtpPeriod.checkbox(False)
+gui.F_Add.dtpPeriod.event(lostfocus,datepicker1_lostfocus)
+gui.F_Add.lbl3.create(label,"CUM Period",True,1935,255,1,4800,200,True,0,Arial,8,-2147483633,0)
+gui.F_Add.lbl4.create(label,"Beginning Balance",True,1395,255,1,6900,200,True,0,Arial,8,-2147483633,0)
+gui.F_Add.lbl5.create(label,"Adjustment to CUM QTY",True,1080,420,1,8400,5,True,0,Arial,8,-2147483633,0)
+gui.F_Add.lbl6.create(label,"Period Activity QTY",True,1935,255,1,9905,200,True,0,Arial,8,-2147483633,0)
+gui.F_Add.txtBegBalance.create(textbox,"0",True,1400,300,0,6900,415,True,0,Arial,8,-2147483643,1)
+gui.F_Add.txtBegBalance.numericonly(1)
+gui.F_Add.lbl8.create(label,"Part",True,555,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.F_Add.txtAdjQty.create(textbox,"0",True,1400,300,0,8400,415,True,0,Arial,8,-2147483643,1)
+gui.F_Add.txtAdjQty.numericonly(1)
+gui.F_Add.txtPerAct.create(textbox,"",True,1400,300,0,9905,415,False,0,Arial,8,-2147483643,1)
+gui.F_Add.cmdSave.create(button)
+gui.F_Add.cmdSave.caption("Save")
+gui.F_Add.cmdSave.visible(True)
+gui.F_Add.cmdSave.size(855,375)
+gui.F_Add.cmdSave.zorder(0)
+gui.F_Add.cmdSave.position(11400,385)
+gui.F_Add.cmdSave.enabled(True)
+gui.F_Add.cmdSave.fontname("Arial")
+gui.F_Add.cmdSave.fontsize(8)
+gui.F_Add.cmdSave.event(click,cmdsave_click)
+gui.F_Add.cmdSave.disableonclick(10)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Coded by: JLH
+'Project Start Date: 9/29/2011
+'Notes:
+'  Quote 2842
+'  GFM
+
+F.Intrinsic.Debug.Stop
+F.ODBC.Connection!Conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.Intrinsic.Control.CallSub(Buildstyle)
+F.Intrinsic.Control.CallSub(Cmddisplay_click)
+
+Gui.F_CUMs..Show
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+program.sub.f_cums_unload.start
+F.Intrinsic.Control.SetErrorHandler("f_cums_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!Conx.Close
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("f_cums_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.f_cums_unload.end
+
+program.sub.cmdcustbrowser_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdcustbrowser_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sQuery.Declare(String)
+
+
+F.Intrinsic.UI.Browser(205,"",v.Local.sRet)
+
+F.Intrinsic.Control.if(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_CUMs.txtCust.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.CallSub(Populate)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdcustbrowser_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdcustbrowser_click.end
+
+program.sub.cmdadd_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdadd_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Open add form if customer field isn't blank
+F.Intrinsic.Control.If(V.Screen.F_CUMs!txtCust.Text,<>,"")
+	Gui.F_Add..Show
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("Please select a Customer")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdadd_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdadd_click.end
+
+program.sub.cmdcalc_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdcalc_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.iSum.Declare(Long)
+V.local.sPart.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.sDate.Declare(String)
+V.local.iRow.Declare(Long)
+V.Local.sCust.Declare(String)
+
+F.Intrinsic.Debug.Stop
+
+V.Local.iRow.Set(V.Screen.F_CUMs!gsflexgrid1.Rows)
+F.Intrinsic.Math.Sub(V.Local.iRow,1,V.Local.iRow)
+
+F.Intrinsic.Control.For(V.Local.iCount,1,V.local.iRow,1)
+	V.Local.iSum.Set(0)
+	Gui.F_CUMs.gsflexgrid1.GetTextMatrix(1,V.Local.iCount,V.Local.sPart)
+	Gui.F_CUMs.gsflexgrid1.GetTextMatrix(3,V.Local.iCount,V.Local.sDate)
+	Gui.F_CUMs.gsflexgrid1.GetTextMatrix(0,V.Local.iCount,V.Local.sCust)
+	F.Intrinsic.String.Format(V.Local.sDate,"YYYYMMDD",V.Local.sDate)
+	F.Intrinsic.String.Concat("Select QTY_SHIPPED from ORDER_HIST_LINE where CUSTOMER='",V.local.sCust,"' and PART='",V.local.sPart,"' and DATE_SHIPPED >= '",V.local.sDate,"'",V.Local.sQuery)
+	F.ODBC.Connection!Conx.OpenRecordsetRO("rstCalc",V.Local.sQuery)
+	F.Intrinsic.Control.DoUntil(V.ODBC.Conx!rstCalc.EOF,=,True)
+		F.Intrinsic.Math.Add(V.local.iSum,V.ODBC.Conx!rstCalc.FieldVal!QTY_SHIPPED,V.Local.iSum)
+		F.ODBC.Conx!rstCalc.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.Conx!rstCalc.Close
+
+F.Intrinsic.Debug.Stop
+	
+	F.Intrinsic.String.Concat("Select * From ATG_Cust_CUMS where customer='",V.local.sCust,"' and PART='",V.Local.sPart,"'",V.Local.sQuery)
+	F.ODBC.Connection!Conx.OpenRecordsetRW("rstCalc",V.Local.sQuery)
+	F.Intrinsic.Control.if(V.ODBC.Conx!rstCalc.EOF,=,False)
+		F.ODBC.Conx!rstCalc.Set!PERIOD_Qty(V.Local.iSum)
+		F.Intrinsic.Math.Add(V.ODBC.Conx!rstCalc.FieldVal!Beg_Balance,V.Local.iSum,V.ODBC.Conx!rstCalc.FieldVal!Adj_Qty,V.Local.iSum)
+		F.ODBC.Conx!rstCalc.Set!Net_Qty(V.Local.iSum)
+		F.ODBC.Conx!rstCalc.Update
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstCalc.Close
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.Control.If(V.Screen.F_CUMs!txtCust.Text,<>,"")
+	F.Intrinsic.Control.CallSub(Populate)
+F.Intrinsic.Control.Else
+	F.Intrinsic.control.CallSub(Cmddisplay_click)
+F.Intrinsic.Control.EndIf
+
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdcalc_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdcalc_click.end
+
+program.sub.f_add_unload.start
+F.Intrinsic.Control.SetErrorHandler("f_add_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+Gui.F_Add..Visible(False)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("f_add_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.f_add_unload.end
+
+program.sub.cmdsave_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdsave_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.iSum.Declare(Long)
+
+
+F.Intrinsic.Math.Add(V.Screen.F_Add!txtBegBalance.Text,V.Screen.F_Add!txtPerAct.Text,V.Screen.F_Add!txtAdjQty.Text,V.Local.iSum)
+
+F.Intrinsic.String.Concat("Select * From ATG_Cust_CUMs where PART='",V.Screen.F_Add!txtPart.Text,"' and Customer='",V.Screen.F_CUMs!txtCust.Text,"'",V.Local.sQuery)
+F.ODBC.Connection!Conx.OpenRecordsetRW("rstSave",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstSave.EOF,=,False)
+	F.ODBC.Conx!rstSave.Set!Cust_Part(V.Screen.F_Add!txtCustPart.Text)
+	F.ODBC.Conx!rstSave.Set!CUM_Period(V.Screen.F_Add!dtpPeriod.value)
+	F.Intrinsic.Control.If(V.Screen.F_Add!txtBegBalance.Text,<>,"")
+		F.ODBC.Conx!rstSave.Set!Beg_Balance(V.Screen.F_Add!txtBegBalance.Text)
+	F.Intrinsic.Control.Else
+		F.ODBC.Conx!rstSave.Set!Beg_Balance(0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Screen.F_Add!txtPerAct.Text,<>,"")
+		F.ODBC.Conx!rstSave.Set!Period_Qty(V.Screen.F_Add!txtPerAct.Text)
+	F.Intrinsic.Control.Else
+		F.ODBC.Conx!rstSave.Set!Period_Qty(0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Screen.F_Add!txtAdjQty.Text,<>,"")
+		F.ODBC.Conx!rstSave.Set!Adj_Qty(V.Screen.F_Add!txtAdjQty.Text)
+	F.Intrinsic.Control.Else
+		F.ODBC.Conx!rstSave.Set!Adj_Qty(0)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstSave.Set!Net_Qty(V.Local.iSum)
+	F.ODBC.Conx!rstSave.Update
+F.Intrinsic.Control.Else
+	F.ODBC.Conx!rstSave.AddNew
+	F.ODBC.Conx!rstSave.Set!Part(V.Screen.F_Add!txtPart.Text)
+	F.ODBC.Conx!rstSave.Set!Customer(V.Screen.F_CUMs!txtCust.Text)
+	F.ODBC.Conx!rstSave.Set!Cust_Part(V.Screen.F_Add!txtCustPart.Text)
+	F.ODBC.Conx!rstSave.Set!CUM_Period(V.Screen.F_Add!dtpPeriod.value)
+	F.Intrinsic.Control.If(V.Screen.F_Add!txtBegBalance.Text,<>,"")
+		F.ODBC.Conx!rstSave.Set!Beg_Balance(V.Screen.F_Add!txtBegBalance.Text)
+	F.Intrinsic.Control.Else
+		F.ODBC.Conx!rstSave.Set!Beg_Balance(0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Screen.F_Add!txtPerAct.Text,<>,"")
+		F.ODBC.Conx!rstSave.Set!Period_Qty(V.Screen.F_Add!txtPerAct.Text)
+	F.Intrinsic.Control.Else
+		F.ODBC.Conx!rstSave.Set!Period_Qty(0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Screen.F_Add!txtAdjQty.Text,<>,"")
+		F.ODBC.Conx!rstSave.Set!Adj_Qty(V.Screen.F_Add!txtAdjQty.Text)
+	F.Intrinsic.Control.Else
+		F.ODBC.Conx!rstSave.Set!Adj_Qty(0)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstSave.Set!Net_Qty(V.Local.iSum)
+	F.ODBC.Conx!rstSave.Update
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstSave.Close
+
+F.Intrinsic.Control.CallSub(Populate)
+F.Intrinsic.Control.CallSub(Clear_add)
+Gui.F_Add..Visible(False)
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdsave_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdsave_click.end
+
+program.sub.cmdpart_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpart_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sQuery.Declare(String)
+
+
+f.Intrinsic.UI.Browser(100,"",v.Local.sRet)
+
+F.Intrinsic.Control.if(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.String.Concat(V.Local.sRet(0),V.Local.sRet(1),V.Local.sRet)
+	Gui.F_Add.txtPart.Text(V.Local.sRet)
+	F.Intrinsic.String.Concat("Select CUSTOMER_PART from V_INV_CROSS_REF where customer='",V.Screen.F_CUMs!txtCust.text,"' and Part='",V.Local.sRet,"'",V.Local.sQuery)
+	F.ODBC.Connection!Conx.OpenRecordsetRO("rstPart",V.Local.sQuery)
+	F.Intrinsic.Control.if(V.ODBC.Conx!rstPart.EOF,=,False)
+		Gui.F_Add.txtCustPart.Text(V.ODBC.Conx!rstPart.FieldVal!CUSTOMER_PART)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstPart.Close
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdpart_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpart_click.end
+
+program.sub.datepicker1_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("datepicker1_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.iSum.Declare(Long)
+V.Local.sDate.Declare(String)
+
+
+F.Intrinsic.string.Format(V.Screen.F_Add!dtpPeriod.Value,"YYYYMMDD",V.Local.sDate)
+
+F.Intrinsic.Control.If(V.Screen.F_Add!txtPart.Text,<>,"")
+	F.Intrinsic.String.Concat("Select * from ORDER_HIST_LINE where CUSTOMER='",V.Screen.F_CUMs!txtCust.Text,"' and PART='",V.Screen.F_Add!txtPart.Text,"' and DATE_SHIPPED >= '",V.Local.sDate,"'",V.Local.sQuery)
+	F.ODBC.Connection!Conx.OpenRecordsetRO("rstDTP",V.Local.sQuery)
+	F.Intrinsic.Control.DoUntil(V.ODBC.Conx!rstDTP.EOF,=,True)
+		F.Intrinsic.Math.Add(V.local.iSum,V.ODBC.Conx!rstDTP.FieldVal!QTY_SHIPPED,V.Local.iSum)
+		F.ODBC.Conx!rstDTP.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.Conx!rstDTP.Close
+
+	Gui.F_Add.txtPerAct.Text(V.Local.iSum)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("datepicker1_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.datepicker1_lostfocus.end
+
+Program.Sub.Buildstyle.Start
+F.Intrinsic.Control.SetErrorHandler("Buildstyle_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+Gui.F_CUMs.gsflexgrid1.Cols(9)
+Gui.F_CUMs.gsflexgrid1.Rows(2)
+Gui.F_CUMs.gsflexgrid1.FixedRows(1)
+
+Gui.F_CUMs.gsflexgrid1.setcolumnpercentages(".12:.14:.14:.11:.11:.11:.11:.11:.05")
+
+'Customer
+Gui.F_CUMs.gsflexgrid1.TextMatrix(0,0,"Customer")
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,0,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,0,"Format","Alignment",4)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,0,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,0,"Format","Alignment",2)
+
+'Part
+Gui.F_CUMs.gsflexgrid1.TextMatrix(1,0,"Part")
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,1,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,1,"Format","Alignment",4)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,1,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,1,"Format","Alignment",2)
+
+'Customer Part
+Gui.F_CUMs.gsflexgrid1.TextMatrix(2,0,"Customer Part")
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,2,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,2,"Format","Alignment",4)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,2,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,2,"Format","Alignment",2)
+
+'CUM Period
+Gui.F_CUMs.gsflexgrid1.TextMatrix(3,0,"CUM Period")
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,3,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,3,"Format","Alignment",4)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,3,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,3,"Format","Alignment",4)
+
+'Beginning Balance
+Gui.F_CUMs.gsflexgrid1.TextMatrix(4,0,"Beginning Balance")
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,4,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,4,"Format","Alignment",4)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,4,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,4,"Format","Alignment",6)
+
+'Period Activity Qty
+Gui.F_CUMs.gsflexgrid1.TextMatrix(5,0,"Period Activity QTY")
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,5,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,5,"Format","Alignment",4)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,5,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,5,"Format","Alignment",6)
+
+'Adjustment to CUM Qty
+Gui.F_CUMs.gsflexgrid1.TextMatrix(6,0,"Adjustment to CUM QTY")
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,6,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,6,"Format","Alignment",4)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,6,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,6,"Format","Alignment",6)
+
+'Net CUM Qty
+Gui.F_CUMs.gsflexgrid1.TextMatrix(7,0,"Net CUM QTY")
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,7,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,7,"Format","Alignment",4)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,7,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,7,"Format","Alignment",6)
+
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,8,"Type","Locked",True)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(1,8,"Format","Alignment",4)
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,8,"Type","Command","Edit")
+Gui.F_CUMs.gsflexgrid1.BuildStyle(2,8,"Format","Alignment",4)
+
+Gui.F_CUMs.gsflexgrid1.ApplyStyle(0,1)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Buildstyle_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Buildstyle.End
+
+Program.Sub.Populate.Start
+F.Intrinsic.Control.SetErrorHandler("Populate_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+
+Gui.F_CUMs.gsflexgrid1.Rows(1)
+Gui.F_CUMs.gsflexgrid1.Rows(2)
+Gui.F_CUMs.gsflexgrid1.FixedRows(1)
+
+F.Intrinsic.String.Concat("Select CUSTOMER, PART, CUST_PART, CUM_PERIOD, BEG_BALANCE, PERIOD_QTY, ADJ_QTY, NET_QTY From ATG_CUST_CUMS where CUSTOMER='",V.Screen.F_CUMs!txtCust.Text,"'",V.Local.sQuery)
+F.ODBC.Connection!Conx.OpenRecordsetRO("rstPop",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstPop.EOF,=,False)
+	Gui.F_CUMs.gsflexgrid1.LoadRecordset("conx!rstPop",2)
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstPop.Close
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Populate_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Populate.End
+
+Program.Sub.Clear_Add.Start
+F.Intrinsic.Control.SetErrorHandler("Clear_Add_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+Gui.F_Add.txtAdjQty.Text("")
+Gui.F_Add.txtBegBalance.Text("")
+Gui.F_Add.txtCustPart.Text("")
+Gui.F_Add.txtPart.Text("")
+Gui.F_Add.txtPerAct.Text("")
+Gui.F_Add.dtpPeriod.Value(V.Ambient.Now)
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Clear_Add_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Clear_Add.End
+
+program.sub.gsflexgrid1_commandclick.start
+F.Intrinsic.Control.SetErrorHandler("gsflexgrid1_commandclick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sPart.Declare(String)
+
+Gui.F_CUMs.gsflexgrid1.GetTextMatrix(0,V.Screen.F_CUMs!gsflexgrid1.Row,V.Local.sPart)
+
+F.Intrinsic.String.Concat("Select * from ATG_Cust_CUMS where part='",V.Local.sPart,"' and Customer='",V.Screen.F_CUMs!txtCust.Text,"'",V.Local.sQuery)
+F.ODBC.Connection!Conx.OpenRecordsetRO("rstCMD",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstCMD.EOF,=,False)
+	Gui.F_Add.txtAdjQty.Text(V.ODBC.Conx!rstCMD.FieldVal!Adj_Qty)
+	Gui.F_Add.txtBegBalance.Text(V.ODBC.Conx!rstCMD.FieldVal!Beg_Balance)
+	Gui.F_Add.txtCustPart.Text(V.ODBC.Conx!rstCMD.FieldVal!Cust_Part)
+	Gui.F_Add.txtPart.Text(V.ODBC.Conx!rstCMD.FieldVal!Part)
+	Gui.F_Add.txtPerAct.Text(V.ODBC.Conx!rstCMD.FieldVal!Period_Qty)
+	Gui.F_Add.dtpPeriod.Value(V.ODBC.Conx!rstCMD.FieldVal!CUM_period)
+	Gui.F_Add..Show
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstCMD.Close
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("gsflexgrid1_commandclick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Cust_CUMS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.gsflexgrid1_commandclick.end
+
+program.sub.cmddisplay_click.start
+V.Local.sQuery.Declare(String)
+
+V.Local.sQuery.Set("Select Customer, PART, CUST_PART, CUM_PERIOD, BEG_BALANCE, PERIOD_QTY, ADJ_QTY, NET_QTY From ATG_3179_CUST_CUMS")
+F.ODBC.Connection!Conx.OpenRecordsetRO("rstPop",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstPop.EOF,=,False)
+	Gui.F_CUMs.gsflexgrid1.LoadRecordset("conx!rstPop",2)
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstPop.Close
+
+program.sub.cmddisplay_click.end
+
+
